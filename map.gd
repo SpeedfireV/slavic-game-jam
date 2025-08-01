@@ -1,7 +1,7 @@
 class_name Map
 extends Node2D
 
-@export var map_size: int = 30  # Number of rings
+@export var map_size: int = 100  # Number of rings
 
 var map_hexagon_scene: PackedScene = preload("res://map_hexagon.tscn")
 

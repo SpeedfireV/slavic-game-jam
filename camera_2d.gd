@@ -56,6 +56,7 @@ func handle_edge_pan(delta: float):
 		movement_direction.y = 1
 		pan_speed = max(pan_speed, base_pan_speed * ((mouse_position.y - (viewport_size.y - edge_margin)) / edge_margin))
 
+	pan_speed = min(pan_speed, 500)
 	if movement_direction != Vector2.ZERO:
 		global_position += movement_direction.normalized() * pan_speed * delta
 

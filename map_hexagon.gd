@@ -9,6 +9,14 @@ enum HexagonOrientation {
 	BottomRight
 }
 
+enum HexagonType {
+	Empty,
+	Forest,
+	Mountain,
+	River,
+	Swamp,
+	Plain
+}
 
 class Neighbours:
 	var hexagons: Dictionary[HexagonOrientation, MapHexagon] = {
