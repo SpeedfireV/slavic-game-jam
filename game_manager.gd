@@ -10,6 +10,8 @@ enum Season {
 
 var collectable_resources := CollectableResources.new()
 
+var selected_hexagon: MapHexagon = null
+
 signal next_turn(current_season: Season)
 
 var current_season: Season = Season.Spring:

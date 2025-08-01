@@ -1,7 +1,7 @@
 class_name Map
 extends Node2D
 
-@export var map_size: int = 100  # Number of rings
+@export var map_size: int = 50  # Number of rings
 
 var map_hexagon_scene: PackedScene = preload("res://map_hexagon.tscn")
 
@@ -75,7 +75,6 @@ func _generate_map():
 	for i in range(1, map_size):
 		for j in range(i * 6):
 			if not placed_hexagons.has(last_pos + orientation_to_pos[_get_next_rotated_orientation(current_rotation)]):
-				print(j, orientation_to_pos[_get_next_rotated_orientation(current_rotation)])
 				current_rotation = _get_next_rotated_orientation(current_rotation)
 				last_pos += orientation_to_pos[current_rotation]
 			else:
