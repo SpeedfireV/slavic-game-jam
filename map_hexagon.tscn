@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqvhcagx06gku"]
+
+[ext_resource type="Script" uid="uid://buhsxcu083a3s" path="res://map_hexagon.gd" id="1_bi2y5"]
+[ext_resource type="Texture2D" uid="uid://b3a8fjeloratq" path="res://assets/grass_filled.png" id="2_w3l8w"]
+
+[node name="MapHexagon" type="Node2D"]
+script = ExtResource("1_bi2y5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w3l8w")
