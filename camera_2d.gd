@@ -9,6 +9,7 @@ extends Camera2D
 @export var min_zoom: float = 0.4
 @export var max_zoom: float = 2.0
 
+var lock_camera_move = false
 
 var is_dragging: bool = false
 var last_mouse_position: Vector2 = Vector2.ZERO
@@ -16,12 +17,24 @@ var last_mouse_position: Vector2 = Vector2.ZERO
 
 
 func _process(delta: float):
-	handle_edge_pan(delta)
+	move_camera_wsad(delta)
+	lock_camera_movement()
+	if !lock_camera_move:
+		handle_edge_pan(delta)
 
 func _unhandled_input(event: InputEvent):
 	handle_zoom(event)
 	handle_scroll_drag(event)
+	
+func move_camera_wsad(delta):
+	var movement_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	global_position += movement_vector * 500 * delta
 
+func lock_camera_movement():
+	if Input.is_action_just_pressed("camera_mouse_move"):
+		lock_camera_move=!lock_camera_move
+		print("CAMERA LOCKED:"+ str(lock_camera_move))
+		
 
 func handle_edge_pan(delta: float):
 	var movement_direction = Vector2.ZERO
