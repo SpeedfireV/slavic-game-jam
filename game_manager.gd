@@ -1,6 +1,5 @@
 extends Node
 
-var grid_step: Vector2i = Vector2i(60, 35)  # Assuming hexagons are 64x64 pixels
 
 enum Season {
 	Spring,
