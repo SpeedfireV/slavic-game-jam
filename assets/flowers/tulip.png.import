@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfr3ixstc45aq"
-path="res://.godot/imported/field_poppy.png-fdeba0d1079630ce5af835192023e9c9.ctex"
+uid="uid://313hvlqi8me4"
+path="res://.godot/imported/tulip.png-4fac7af39a2cb065240045c6b6aabb04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/field_poppy.png"
-dest_files=["res://.godot/imported/field_poppy.png-fdeba0d1079630ce5af835192023e9c9.ctex"]
+source_file="res://assets/flowers/tulip.png"
+dest_files=["res://.godot/imported/tulip.png-4fac7af39a2cb065240045c6b6aabb04.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb1lp3slrikfi"
-path="res://.godot/imported/dandelion.png-8c732bfd587b6776907c8a9cd336fac9.ctex"
+uid="uid://dqb8dtbumvruc"
+path="res://.godot/imported/dandelion_old.png-2b49073b2e325622cf23fa3773c0e003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dandelion.png"
-dest_files=["res://.godot/imported/dandelion.png-8c732bfd587b6776907c8a9cd336fac9.ctex"]
+source_file="res://assets/flowers/dandelion_old.png"
+dest_files=["res://.godot/imported/dandelion_old.png-2b49073b2e325622cf23fa3773c0e003.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c51ukjx0bplyy"
-path="res://.godot/imported/normal_bee.png-b051279fdd04b2f10ff9d3ef53a2cf43.ctex"
+uid="uid://c8nhbybnvb78e"
+path="res://.godot/imported/stone_10.png-7922d21235b18dd3c827d7ea19fc9a63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/normal_bee.png"
-dest_files=["res://.godot/imported/normal_bee.png-b051279fdd04b2f10ff9d3ef53a2cf43.ctex"]
+source_file="res://assets/hexagons/empty/stone_10.png"
+dest_files=["res://.godot/imported/stone_10.png-7922d21235b18dd3c827d7ea19fc9a63.ctex"]
 
 [params]
 

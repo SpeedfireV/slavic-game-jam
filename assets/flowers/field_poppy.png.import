@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnwgn7b8yracu"
-path="res://.godot/imported/lavender.png-e9e39dac10ddd379fc80ec88a36d3b56.ctex"
+uid="uid://cfr3ixstc45aq"
+path="res://.godot/imported/field_poppy.png-e0dc706de945e422f3b36ed61bff3c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lavender.png"
-dest_files=["res://.godot/imported/lavender.png-e9e39dac10ddd379fc80ec88a36d3b56.ctex"]
+source_file="res://assets/flowers/field_poppy.png"
+dest_files=["res://.godot/imported/field_poppy.png-e0dc706de945e422f3b36ed61bff3c45.ctex"]
 
 [params]
 

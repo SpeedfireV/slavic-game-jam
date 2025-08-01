@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br2l8t2y5xwxe"
-path="res://.godot/imported/clover.png-521b49c60503b154c4d4e109a18a5d0e.ctex"
+uid="uid://dpr7bcx08u2kx"
+path="res://.godot/imported/daisy.png-414b8d438920a2b1529274b8bd4f6d84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/clover.png"
-dest_files=["res://.godot/imported/clover.png-521b49c60503b154c4d4e109a18a5d0e.ctex"]
+source_file="res://assets/flowers/daisy.png"
+dest_files=["res://.godot/imported/daisy.png-414b8d438920a2b1529274b8bd4f6d84.ctex"]
 
 [params]
 

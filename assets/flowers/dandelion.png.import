@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bigc8owakqnqh"
-path="res://.godot/imported/sunflower.png-af3bb8ac4c07e770edaacc6711fa7f04.ctex"
+uid="uid://bb1lp3slrikfi"
+path="res://.godot/imported/dandelion.png-3278fbb67789ecb294c037fdc15b95e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sunflower.png"
-dest_files=["res://.godot/imported/sunflower.png-af3bb8ac4c07e770edaacc6711fa7f04.ctex"]
+source_file="res://assets/flowers/dandelion.png"
+dest_files=["res://.godot/imported/dandelion.png-3278fbb67789ecb294c037fdc15b95e6.ctex"]
 
 [params]
 

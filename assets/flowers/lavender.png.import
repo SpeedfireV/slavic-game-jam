@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpr7bcx08u2kx"
-path="res://.godot/imported/daisy.png-cc88c37d228253dd268e6319c9f1dc5f.ctex"
+uid="uid://dnwgn7b8yracu"
+path="res://.godot/imported/lavender.png-db49348fa043a4f71b7637574d349f63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/daisy.png"
-dest_files=["res://.godot/imported/daisy.png-cc88c37d228253dd268e6319c9f1dc5f.ctex"]
+source_file="res://assets/flowers/lavender.png"
+dest_files=["res://.godot/imported/lavender.png-db49348fa043a4f71b7637574d349f63.ctex"]
 
 [params]
 

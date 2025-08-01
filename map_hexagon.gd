@@ -70,6 +70,7 @@ class Neighbours:
 				bottom_right_hexagon = hexagon
 
 @onready var hexagon_sprite: Sprite2D = %HexSprite
+@onready var hexagon_resource: Sprite2D = %HexResource
 
 var neighbours: Neighbours = Neighbours.new()
 
@@ -89,3 +90,5 @@ func _ready():
 	hexagon_type = HexagonType.values().pick_random()
 	if hexagon_type == HexagonType.Blocade:
 		hexagon_sprite.texture = OBSTACLES[randi() % OBSTACLES.size()]
+	if hexagon_type == HexagonType.Flower:
+		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
