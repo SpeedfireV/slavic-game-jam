@@ -8,6 +8,8 @@ enum Season {
 	Winter,
 }
 
+var collectable_resources := CollectableResources.new()
+
 signal next_turn(current_season: Season)
 
 var current_season: Season = Season.Spring:
