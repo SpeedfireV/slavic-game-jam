@@ -74,3 +74,5 @@ class Neighbours:
 var neighbours: Neighbours = Neighbours.new()
 
 var coords: Vector2i = Vector2i.ZERO
+
+var hexagon_type: HexagonType = HexagonType.Empty
