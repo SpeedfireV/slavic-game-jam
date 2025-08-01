@@ -14,4 +14,3 @@ var current_season: Season = Season.Spring:
 	set(new_value):
 		current_season = new_value
 		next_turn.emit(current_season)
-
