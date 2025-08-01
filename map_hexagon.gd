@@ -9,16 +9,16 @@ enum HexagonOrientation {
 	BottomRight
 }
 
-static var hexagon_orientation_to_relative_pos: Dictionary[HexagonOrientation, Vector2] = {
-	HexagonOrientation.Right: Vector2(GameManager.grid_step.x * 2, 0),
-	HexagonOrientation.Left: Vector2(GameManager.grid_step.x * 2, 0),
-	HexagonOrientation.TopLeft: Vector2(-GameManager.grid_step.x, -GameManager.grid_step.y * 3),
-	HexagonOrientation.TopRight: Vector2(GameManager.grid_step.x,  -GameManager.grid_step.y * 3),
-	HexagonOrientation.BottomLeft: Vector2(-GameManager.grid_step.x, GameManager.grid_step.y * 3),
-	HexagonOrientation.BottomRight: Vector2(GameManager.grid_step.x, GameManager.grid_step.y)
-}
 
 class Neighbours:
+	var hexagons: Dictionary[HexagonOrientation, MapHexagon] = {
+		HexagonOrientation.Right: null,
+		HexagonOrientation.Left: null,
+		HexagonOrientation.TopLeft: null,
+		HexagonOrientation.TopRight: null,
+		HexagonOrientation.BottomLeft: null,
+		HexagonOrientation.BottomRight: null
+	}
 	var left_hexagon: MapHexagon = null
 	var right_hexagon: MapHexagon = null
 	var top_left_hexagon: MapHexagon = null
@@ -64,3 +64,5 @@ class Neighbours:
 
 
 var neighbours: Neighbours = Neighbours.new()
+
+var coords: Vector2i = Vector2i.ZERO
