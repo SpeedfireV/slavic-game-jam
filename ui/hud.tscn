@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://drt2hvcmae3s8"]
+
+[ext_resource type="Script" uid="uid://7uumi0y6r2fc" path="res://ui/hud.gd" id="1_7ihmi"]
+[ext_resource type="PackedScene" uid="uid://jrpypt07m3co" path="res://ui/stats_bar.tscn" id="1_rbyyf"]
+[ext_resource type="PackedScene" uid="uid://nu52ulpvu4k2" path="res://ui/hex_description/hex_description.tscn" id="2_276te"]
+[ext_resource type="PackedScene" uid="uid://b7jl8yjv0b0i0" path="res://ui/next_turn_button.tscn" id="3_546lt"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7ihmi")
+
+[node name="StatsBar" parent="." instance=ExtResource("1_rbyyf")]
+unique_name_in_owner = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -131.0
+offset_right = 163.0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HexDescription" parent="MarginContainer2" instance=ExtResource("2_276te")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="NextTurnButton" parent="MarginContainer" instance=ExtResource("3_546lt")]
+unique_name_in_owner = true
+layout_mode = 2

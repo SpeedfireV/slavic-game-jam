@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3g86ic5ehqmi"]
+
+[ext_resource type="PackedScene" uid="uid://dwvi8aa4n3a3i" path="res://ui/hex_description/bonuses/hex_bonus.tscn" id="1_2xa0i"]
+
+[node name="HexBonus" instance=ExtResource("1_2xa0i")]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyp2an4w5fqos"]
+
+[ext_resource type="Script" uid="uid://cnwbn6ouj3t0e" path="res://map/map.gd" id="1_c7s6e"]
+[ext_resource type="PackedScene" uid="uid://dqvhcagx06gku" path="res://map/map_hexagon.tscn" id="2_a0dt8"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_c7s6e")
+map_hexagon_scene = ExtResource("2_a0dt8")

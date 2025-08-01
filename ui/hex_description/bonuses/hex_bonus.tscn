@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwvi8aa4n3a3i"]
+
+[ext_resource type="Script" uid="uid://0m57ws1dim0x" path="res://ui/hex_description/bonuses/hex_bonus.gd" id="1_2evxo"]
+
+[node name="HexBonus" type="HBoxContainer"]
+offset_right = 1.0
+offset_bottom = 38.0
+script = ExtResource("1_2evxo")
+
+[node name="BonusIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BonusLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2

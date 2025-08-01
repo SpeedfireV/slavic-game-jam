@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://jrpypt07m3co"]
+
+[ext_resource type="Script" uid="uid://1ewxtmotw010" path="res://ui/stats_bar.gd" id="1_2qrqc"]
+[ext_resource type="Theme" uid="uid://dp38infowk4e3" path="res://ui/custom_theme.tres" id="2_a58cu"]
+[ext_resource type="Texture2D" uid="uid://brgjbiiq2b1kl" path="res://assets/resources/nectar.png" id="3_a58cu"]
+[ext_resource type="Texture2D" uid="uid://bdtdhgm8ai0vb" path="res://assets/resources/honey.png" id="4_tv1aq"]
+
+[node name="StatsBar" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+script = ExtResource("1_2qrqc")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="TempResourcesUI" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+layout_mode = 2
+
+[node name="Honeycomb" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_a58cu")
+text = "HONEYCOMB 32"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+layout_mode = 2
+
+[node name="Beeswax" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BEESWAX 15"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("3_a58cu")
+expand_mode = 1
+
+[node name="Nectar" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "50"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("4_tv1aq")
+
+[node name="Honey" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HONEY 15"

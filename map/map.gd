@@ -3,7 +3,7 @@ extends Node2D
 
 @export var map_size: int = 50  # Number of rings
 
-var map_hexagon_scene: PackedScene = preload("res://map_hexagon.tscn")
+@export var map_hexagon_scene: PackedScene
 
 # Track hexes by position
 ## In hexagon grid

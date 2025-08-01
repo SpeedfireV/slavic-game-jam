@@ -17,7 +17,17 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://game_manager.gd"
+GameManager="*res://managers/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
+[gui]
+
+theme/custom="uid://dp38infowk4e3"
+theme/custom_font="uid://bxupx68qkthpl"
 
 [input]
 

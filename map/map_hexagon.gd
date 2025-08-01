@@ -77,16 +77,18 @@ class Neighbours:
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
+var selected: bool = false
 
 var mouse_on_top: bool = false:
 	set(new_value):
 		mouse_on_top = new_value
-		if mouse_on_top:
-			var tween: Tween = create_tween()
-			tween.tween_property(hexagon_border, "modulate", Color(0xff8100ff), 0.1)
-		else:
-			var tween: Tween = create_tween()
-			tween.tween_property(hexagon_border, "modulate", Color(0xffffffff), 0.1)
+		if not selected:
+			if mouse_on_top:
+				var tween: Tween = create_tween()
+				tween.tween_property(hexagon_border, "modulate", Color(0xffff00ff), 0.1) 
+			else:
+				var tween: Tween = create_tween()
+				tween.tween_property(hexagon_border, "modulate", Color(0xffffffff), 0.1)
 
 
 const OBSTACLES: Array[Texture2D] = [
@@ -106,24 +108,53 @@ func _ready():
 		hexagon_sprite.texture = OBSTACLES[randi() % OBSTACLES.size()]
 	if hexagon_type == HexagonType.Flower:
 		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
+		hexagon_resource.scale = Vector2(1.7, 1.7)
 	if hexagon_type == HexagonType.Beehive:
 		hexagon_resource.texture = preload("res://assets/hexagons/beehive/beehive.png")
+		
 
 	interaction_area.mouse_entered.connect(_on_mouse_entered)
 	interaction_area.mouse_exited.connect(_on_mouse_exited)
+	GameManager.hexagon_selected.connect(_on_hexagon_selected)
 
 func _input(event):
 	if mouse_on_top and Input.is_action_just_pressed("select"):
-		GameManager.selected_hexagon = self
+		_on_hexagon_clicked()
 
 func _process(delta):
 	if GameManager.selected_hexagon == self:
-		hexagon_sprite.scale = Vector2(1.2, 1.2)
-	else:
-		hexagon_sprite.scale = Vector2(1, 1)
+		pass # TODO: Implement VFX on selection
 
 func _on_mouse_entered():
 	mouse_on_top = true
 
+func _on_hexagon_selected(hexagon: MapHexagon):
+	if hexagon != self and selected:
+		selected = false
+		var tween: Tween = create_tween()
+		tween.tween_property(hexagon_border, "modulate", Color(0xffffffff), 0.1)
+
 func _on_mouse_exited():
 	mouse_on_top = false
+
+func _on_hexagon_clicked():
+	GameManager.selected_hexagon = self
+	var tween: Tween = create_tween()
+	selected = true
+	tween.tween_property(hexagon_border, "modulate", Color(0xff8100ff), 0.1)
+	
+
+func get_hex_resource_name() -> String:
+	match hexagon_type:
+		HexagonType.Empty:
+			return "Empty"
+		HexagonType.Flower:
+			return "Flower"
+		HexagonType.Beehive:
+			return "Beehive"
+		HexagonType.Blocade:
+			return "Blocade"
+		HexagonType.Grass:
+			return "Grass"
+	return "Unknown"
+	

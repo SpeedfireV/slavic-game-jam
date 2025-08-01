@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dp38infowk4e3"]
+
+[ext_resource type="StyleBox" uid="uid://fue2v0rxu66g" path="res://ui/theme_data/panel_container/panel_container.tres" id="1_6ddt3"]
+
+[resource]
+HeaderLarge/font_sizes/font_size = 32
+HeaderMedium/font_sizes/font_size = 26
+HeaderSmall/font_sizes/font_size = 20
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 32
+PanelContainer/styles/panel = ExtResource("1_6ddt3")

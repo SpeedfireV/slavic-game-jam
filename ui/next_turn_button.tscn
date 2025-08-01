@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7jl8yjv0b0i0"]
+
+[ext_resource type="Script" uid="uid://cnuef1hp2728x" path="res://ui/next_turn_button.gd" id="1_k0wlo"]
+
+[node name="NextTurnButton" type="Button"]
+offset_right = 100.0
+offset_bottom = 27.0
+disabled = true
+text = "NEXT TURN"
+script = ExtResource("1_k0wlo")
