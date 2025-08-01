@@ -11,11 +11,10 @@ enum HexagonOrientation {
 
 enum HexagonType {
 	Empty,
-	Forest,
-	Mountain,
-	River,
-	Swamp,
-	Plain
+	Flower,
+	Beehive,
+	Blocade,
+	Grass
 }
 
 class Neighbours:
@@ -70,9 +69,23 @@ class Neighbours:
 			HexagonOrientation.BottomRight:
 				bottom_right_hexagon = hexagon
 
+@onready var hexagon_sprite: Sprite2D = %HexSprite
 
 var neighbours: Neighbours = Neighbours.new()
 
 var coords: Vector2i = Vector2i.ZERO
 
 var hexagon_type: HexagonType = HexagonType.Empty
+
+const OBSTACLES: Array[Texture2D] = [
+	preload("res://assets/hexagons/obstacles/obstacle_1.png"),
+	preload("res://assets/hexagons/obstacles/obstacle_2.png"),
+	preload("res://assets/hexagons/obstacles/obstacle_3.png"),
+	preload("res://assets/hexagons/obstacles/obstacle_4.png"),
+	preload("res://assets/hexagons/obstacles/obstacle_5.png"),
+]
+
+func _ready():
+	hexagon_type = HexagonType.values().pick_random()
+	if hexagon_type == HexagonType.Blocade:
+		hexagon_sprite.texture = OBSTACLES[randi() % OBSTACLES.size()]
