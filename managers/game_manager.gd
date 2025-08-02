@@ -22,7 +22,7 @@ func get_season_name(season: Season) -> String:
 			push_error("Error: Invalid season encountered.")
 			return "Unknown Season"
 
-func _nextSeason() -> Season:
+func _next_season_enum() -> Season:
 	match current_season:
 		Season.Spring:
 			return Season.Summer
@@ -46,20 +46,23 @@ var mouse_on_hex: MapHexagon:
 		navigator.show_navigation()
 var selected_bee: Bee
 var bees_node: BeesNode
+var bees_row: BeesRow
 
 var selected_hexagon: MapHexagon = null:
 	set(value):
 		selected_bee = null
 		navigator.clear_navigation()
+		var bees_on_hex: Array[Bee] 
+		for unit in value.units_on_hex:
+			if unit is Bee:
+				bees_on_hex.append(unit)
+		bees_row.set_bees(bees_on_hex)
+		bees_row.set_bees(bees_on_hex)
 		if value != null:
 			GameManager.hud.show_hex_description(value)
 		else:
 			GameManager.hud.hex_description.visible = false
 		selected_hexagon = value
-		if selected_hexagon.unit_on_hex is Bee:
-			GameManager.selected_bee = selected_hexagon.unit_on_hex
-			navigator.show_navigation()
-		selected_hexagon.selection_effect()
 		hexagon_selected.emit(value)
 var hud: Hud
 
@@ -69,11 +72,11 @@ signal hexagon_selected(hexagon: MapHexagon)
 var current_season: Season = Season.Spring
 
 func next_turn():
-	current_season = _nextSeason()
+	current_season = _next_season_enum()
 	next_turn_sig.emit(current_season)
-
+	hud._animate_to_next_season()
 
 func add_new_unit(unit: Unit):
 	unit.global_position = Vector2(unit.current_pos) * Map.grid_step
 	bees_node.add_child(unit)
-	Map.placed_hexagons[unit.current_pos].unit_on_hex = unit
+	Map.placed_hexagons[unit.current_pos].units_on_hex.append(unit)

@@ -14,3 +14,5 @@ const FLOWER_TEXTURES: Array[Texture2D] = [
 	SUNFLOWER_TEXTURE,
 	CLOVER_TEXTURE
 ]
+
+

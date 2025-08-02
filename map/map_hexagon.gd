@@ -85,8 +85,8 @@ class Neighbours:
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
-var selected: bool = false 
-var unit_on_hex: Unit
+var selected: bool = false
+var units_on_hex: Array[Unit] = []
 
 var mouse_on_top: bool = false:
 	set(new_value):
@@ -155,6 +155,7 @@ func _on_mouse_exited():
 
 func _on_hexagon_clicked():
 	GameManager.selected_hexagon = self
+	selection_effect()
 	
 	
 func selection_effect():

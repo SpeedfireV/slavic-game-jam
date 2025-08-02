@@ -7,3 +7,6 @@ func _ready():
 
 func _on_next_turn_button_pressed():
 	GameManager.next_turn()
+
+func _process(delta):
+	disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://nu52ulpvu4k2"]
+[gd_scene load_steps=6 format=3 uid="uid://nu52ulpvu4k2"]
 
 [ext_resource type="Theme" uid="uid://dp38infowk4e3" path="res://ui/custom_theme.tres" id="1_binty"]
 [ext_resource type="Script" uid="uid://od4qxcaki64t" path="res://ui/hex_description/hex_description.gd" id="1_ltfpm"]

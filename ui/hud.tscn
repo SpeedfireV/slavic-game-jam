@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://drt2hvcmae3s8"]
+[gd_scene load_steps=7 format=3 uid="uid://drt2hvcmae3s8"]
 
 [ext_resource type="Script" uid="uid://7uumi0y6r2fc" path="res://ui/hud.gd" id="1_7ihmi"]
 [ext_resource type="PackedScene" uid="uid://jrpypt07m3co" path="res://ui/stats_bar.tscn" id="1_rbyyf"]
 [ext_resource type="PackedScene" uid="uid://nu52ulpvu4k2" path="res://ui/hex_description/hex_description.tscn" id="2_276te"]
 [ext_resource type="PackedScene" uid="uid://bd0wml8an17ye" path="res://rain_effect.tscn" id="2_en2x2"]
 [ext_resource type="PackedScene" uid="uid://b7jl8yjv0b0i0" path="res://ui/next_turn_button.tscn" id="3_546lt"]
+[ext_resource type="PackedScene" uid="uid://dx655hkypa2so" path="res://ui/bees_row.tscn" id="5_1v5rv"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_7ihmi")
@@ -29,8 +30,15 @@ grow_vertical = 0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="HexDescription" parent="MarginContainer2" instance=ExtResource("2_276te")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="HexDescription" parent="MarginContainer2/HBoxContainer" instance=ExtResource("2_276te")]
 unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BeesRow" parent="MarginContainer2/HBoxContainer" instance=ExtResource("5_1v5rv")]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -58,3 +66,14 @@ text = "WINTER"
 [node name="NextTurnButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_546lt")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="NewSeasonColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

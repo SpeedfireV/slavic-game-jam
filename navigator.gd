@@ -102,8 +102,8 @@ func reconstruct_path(came_from: Dictionary, current: Vector2i) -> Array[Vector2
 static func move_bee(bee: Bee, target_coords: Vector2i):
 	if GameManager.navigator.reachable and bee.moves_left >= GameManager.navigator.move_cost:
 		bee.moves_left -= GameManager.navigator.move_cost
-		Map.placed_hexagons[bee.coords].unit_on_hex = null
+		Map.placed_hexagons[bee.coords].units_on_hex.erase(bee)
 		var target_hex = Map.placed_hexagons[target_coords]
 		bee.coords = target_coords
-		target_hex.unit_on_hex = bee
+		target_hex.units_on_hex = bee
 		GameManager.selected_hexagon = Map.placed_hexagons.get(target_coords)
