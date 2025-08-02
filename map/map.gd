@@ -7,7 +7,7 @@ extends Node2D
 
 # Track hexes by position
 ## In hexagon grid
-var placed_hexagons: Dictionary[Vector2i, MapHexagon] = {}
+static var placed_hexagons: Dictionary[Vector2i, MapHexagon] = {}
 
 enum HexagonOrientation {
 	Right,
@@ -17,7 +17,7 @@ enum HexagonOrientation {
 	BottomLeft,
 	BottomRight
 }
-var grid_step: Vector2 = Vector2(60, 35)  # Assuming hexagons are 64x64 pixels
+static var grid_step: Vector2 = Vector2(60, 35)  # Assuming hexagons are 64x64 pixels
 
 
 # Pixel-based direction offsets (pointy-topped hex grid)

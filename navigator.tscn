@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://kumnmjotrcwj"]
+
+[ext_resource type="Script" uid="uid://obrgxbdl8cyu" path="res://navigator.gd" id="1_pj4sn"]
+
+[node name="Navigator" type="Node2D"]
+script = ExtResource("1_pj4sn")
+
+[node name="NavigationLine" type="Line2D" parent="."]
+unique_name_in_owner = true
+
+[node name="NavigationCost" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 38.0
