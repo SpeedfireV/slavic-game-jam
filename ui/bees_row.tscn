@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx655hkypa2so"]
+
+[ext_resource type="Script" uid="uid://dudevui6rhtyt" path="res://ui/bees_row.gd" id="1_vbksi"]
+[ext_resource type="PackedScene" uid="uid://0lhylvp05r6e" path="res://bee_row_element.tscn" id="2_4bmyf"]
+
+[node name="BeesRow" type="HBoxContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 36
+script = ExtResource("1_vbksi")
+
+[node name="BeeRowElement" parent="." instance=ExtResource("2_4bmyf")]
+layout_mode = 2
