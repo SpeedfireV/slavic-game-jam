@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7uumi0y6r2fc" path="res://ui/hud.gd" id="1_7ihmi"]
 [ext_resource type="PackedScene" uid="uid://jrpypt07m3co" path="res://ui/stats_bar.tscn" id="1_rbyyf"]
 [ext_resource type="PackedScene" uid="uid://nu52ulpvu4k2" path="res://ui/hex_description/hex_description.tscn" id="2_276te"]
-[ext_resource type="PackedScene" uid="uid://bg87qguwvqj45" path="res://rain_effect.tscn" id="2_en2x2"]
+[ext_resource type="PackedScene" uid="uid://bd0wml8an17ye" path="res://rain_effect.tscn" id="2_en2x2"]
 [ext_resource type="PackedScene" uid="uid://b7jl8yjv0b0i0" path="res://ui/next_turn_button.tscn" id="3_546lt"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -11,9 +11,9 @@ script = ExtResource("1_7ihmi")
 
 [node name="RainEffect" parent="." instance=ExtResource("2_en2x2")]
 position = Vector2(248, 10)
+amount = 75
 lifetime = 3.0
-scale_amount_min = 2.0
-scale_amount_max = 8.0
+initial_velocity_max = 30.3
 
 [node name="StatsBar" parent="." instance=ExtResource("1_rbyyf")]
 unique_name_in_owner = true
