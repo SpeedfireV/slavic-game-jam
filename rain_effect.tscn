@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd0wml8an17ye"]
 
-[ext_resource type="Script" path="res://rain_effect.gd" id="1_1fias"]
+[ext_resource type="Script" uid="uid://sixbcfwggxr3" path="res://rain_effect.gd" id="1_1fias"]
 
 [sub_resource type="Gradient" id="Gradient_1fias"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)

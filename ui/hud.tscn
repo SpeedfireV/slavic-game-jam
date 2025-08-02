@@ -13,6 +13,7 @@ script = ExtResource("1_7ihmi")
 position = Vector2(248, 10)
 amount = 75
 lifetime = 3.0
+gravity = Vector2(0, 980)
 initial_velocity_max = 30.3
 
 [node name="StatsBar" parent="." instance=ExtResource("1_rbyyf")]
