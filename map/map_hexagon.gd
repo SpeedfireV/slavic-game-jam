@@ -160,8 +160,6 @@ func _on_hexagon_clicked():
 func selection_effect():
 	var tween: Tween = create_tween()
 	selected = true
-	if unit_on_hex is Bee:
-		GameManager.selected_bee = unit_on_hex
 	tween.tween_property(hexagon_border, "modulate", Color(0xff8100ff), 0.1)
 
 
