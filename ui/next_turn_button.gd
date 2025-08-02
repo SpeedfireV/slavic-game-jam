@@ -1,4 +1,4 @@
-class_name NextTurnContainer extends Button
+class_name NextTurnButton extends Button
 
 
 

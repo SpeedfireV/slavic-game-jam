@@ -5,6 +5,5 @@
 [node name="NextTurnButton" type="Button"]
 offset_right = 100.0
 offset_bottom = 27.0
-disabled = true
 text = "NEXT TURN"
 script = ExtResource("1_k0wlo")

@@ -113,7 +113,9 @@ const ALERT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/alert_hex_bor
 func _ready():
 	if coords == Vector2i.ZERO:
 		hexagon_type = HexagonType.Beehive
-		GameManager.add_new_unit(Bees.NORMAL_BEE_SCENE.instantiate())
+		var bee = Bees.NORMAL_BEE_SCENE.instantiate()
+		bee.coords = coords
+		GameManager.add_new_unit(bee)
 	else:
 		hexagon_type = possible_random_hexagon_types.pick_random()
 	if hexagon_type == HexagonType.Blocade:
@@ -153,12 +155,13 @@ func _on_mouse_exited():
 
 func _on_hexagon_clicked():
 	GameManager.selected_hexagon = self
+	
+	
+func selection_effect():
 	var tween: Tween = create_tween()
 	selected = true
-	if unit_on_hex is Bee:
-		GameManager.selected_bee = unit_on_hex
 	tween.tween_property(hexagon_border, "modulate", Color(0xff8100ff), 0.1)
-	
+
 
 func get_hex_resource_name() -> String:
 	match hexagon_type:

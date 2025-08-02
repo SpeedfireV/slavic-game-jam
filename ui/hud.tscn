@@ -11,9 +11,10 @@ script = ExtResource("1_7ihmi")
 
 [node name="RainEffect" parent="." instance=ExtResource("2_en2x2")]
 position = Vector2(248, 10)
+amount = 75
 lifetime = 3.0
-scale_amount_min = 2.0
-scale_amount_max = 8.0
+gravity = Vector2(0, 980)
+initial_velocity_max = 30.3
 
 [node name="StatsBar" parent="." instance=ExtResource("1_rbyyf")]
 unique_name_in_owner = true
@@ -45,6 +46,15 @@ grow_vertical = 0
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="NextTurnButton" parent="MarginContainer" instance=ExtResource("3_546lt")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="CurrentSeasonLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "WINTER"
+
+[node name="NextTurnButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_546lt")]
 unique_name_in_owner = true
 layout_mode = 2
