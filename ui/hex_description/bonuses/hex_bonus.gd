@@ -8,4 +8,3 @@ class_name HexBonus extends HBoxContainer
 
 func _ready():
 	bonus_label.text = str(value)
-

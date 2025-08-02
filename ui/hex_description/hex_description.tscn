@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nu52ulpvu4k2"]
+[gd_scene load_steps=5 format=3 uid="uid://nu52ulpvu4k2"]
 
 [ext_resource type="Script" uid="uid://od4qxcaki64t" path="res://ui/hex_description/hex_description.gd" id="1_ltfpm"]
+[ext_resource type="Texture2D" uid="uid://brgjbiiq2b1kl" path="res://assets/resources/nectar.png" id="2_b0agt"]
+[ext_resource type="Texture2D" uid="uid://b3jti0axoygk3" path="res://assets/resources/beepollen.png" id="3_ppuvt"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rbyyf"]
 color = Color(1, 0.0470588, 0, 1)
@@ -37,12 +39,28 @@ theme_override_styles/separator = SubResource("StyleBoxLine_rbyyf")
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_type_variation = &"HeaderLarge"
-text = "3"
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_b0agt")
+
+[node name="NectarLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "3"
+text = ":"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_ppuvt")
+
+[node name="BeepollenLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = ":"
