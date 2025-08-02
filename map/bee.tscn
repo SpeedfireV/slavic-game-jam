@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch613464h7lv"]
+[gd_scene load_steps=3 format=3 uid="uid://cs5cysntg0l48"]
 
-[ext_resource type="Script" uid="uid://dmdr8d6knjy67" path="res://node_2d.gd" id="1_86q7x"]
+[ext_resource type="Script" path="res://node_2d.gd" id="1_86q7x"]
 [ext_resource type="Texture2D" uid="uid://c51ukjx0bplyy" path="res://assets/hexagons/bees/normal_bee.png" id="2_u26ct"]
 
 [node name="Bee" type="Node2D"]
