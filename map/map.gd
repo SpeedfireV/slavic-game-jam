@@ -99,5 +99,5 @@ func _check_for_neighbors(hex: MapHexagon, pos: Vector2i):
 		var neighbor_pos = pos + orientation_to_pos[orientation]
 		if placed_hexagons.has(neighbor_pos):
 			var neighbor_hex = placed_hexagons[neighbor_pos]
-			hex.neighbours.set_hexagon(neighbor_hex, orientation)
-			neighbor_hex.neighbours.set_hexagon(hex, _get_opposite_orientation(orientation))
+			hex.neighbours.set_neighbouring_hexagon(neighbor_hex, orientation)
+			neighbor_hex.neighbours.set_neighbouring_hexagon(hex, _get_opposite_orientation(orientation))

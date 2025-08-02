@@ -17,6 +17,13 @@ enum HexagonType {
 	Grass
 }
 
+var possible_random_hexagon_types: Array[HexagonType] = [
+	HexagonType.Empty,
+	HexagonType.Flower,
+	HexagonType.Blocade,
+	HexagonType.Grass
+]
+
 class Neighbours:
 	var hexagons: Dictionary[HexagonOrientation, MapHexagon] = {
 		HexagonOrientation.Right: null,
@@ -54,7 +61,7 @@ class Neighbours:
 			not_filled.append(HexagonOrientation.BottomRight)
 		return not_filled
 
-	func set_hexagon(hexagon: MapHexagon, orientation: HexagonOrientation):
+	func set_neighbouring_hexagon(hexagon: MapHexagon, orientation: HexagonOrientation):
 		match orientation:
 			HexagonOrientation.Left:
 				left_hexagon = hexagon
@@ -73,11 +80,12 @@ class Neighbours:
 @onready var hexagon_border: Sprite2D = %HexBorder
 @onready var hexagon_resource: Sprite2D = %HexResource
 @onready var interaction_area: Area2D = %InteractionArea
+@onready var flower_particles: CPUParticles2D = %FlowerParticles
 
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
-var selected: bool = false
+var selected: bool = false 
 
 var mouse_on_top: bool = false:
 	set(new_value):
@@ -92,23 +100,24 @@ var mouse_on_top: bool = false:
 
 
 const OBSTACLES: Array[Texture2D] = [
-	preload("res://assets/hexagons/obstacles/obstacle_1.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_2.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_3.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_4.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_5.png"),
+	preload("res://assets/hexagons/obstacles/big_stone.png")
 ]
 
 const DEFAULT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/default_hex_border.png")
 const ALERT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/alert_hex_border.png")
 
 func _ready():
-	hexagon_type = HexagonType.values().pick_random()
+	if coords == Vector2i.ZERO:
+		hexagon_type = HexagonType.Beehive
+	else:
+		hexagon_type = possible_random_hexagon_types.pick_random()
 	if hexagon_type == HexagonType.Blocade:
-		hexagon_sprite.texture = OBSTACLES[randi() % OBSTACLES.size()]
+		hexagon_resource.texture = OBSTACLES[randi() % OBSTACLES.size()]
+		hexagon_resource.scale = Vector2(2, 2)
 	if hexagon_type == HexagonType.Flower:
 		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
 		hexagon_resource.scale = Vector2(1.7, 1.7)
+		flower_particles.emitting = true
 	if hexagon_type == HexagonType.Beehive:
 		hexagon_resource.texture = preload("res://assets/hexagons/beehive/beehive.png")
 		
