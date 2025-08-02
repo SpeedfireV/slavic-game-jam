@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Flower" load_steps=4 format=3 uid="uid://cgeh48570wc6r"]
+
+[ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_5oc7o"]
+[ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="1_btcvo"]
+
+[sub_resource type="Resource" id="Resource_skrm6"]
+script = ExtResource("1_btcvo")
+honeycomb = 0
+beeswax = 0
+nectar = 3
+beepollen = 2
+energy = 0
+metadata/_custom_type_script = "uid://0t5ugduq8561"
+
+[resource]
+script = ExtResource("1_5oc7o")
+energy = 0
+collectable_times = 0
+possible_resources = SubResource("Resource_skrm6")
+metadata/_custom_type_script = "uid://c8gdaunyatd4t"
