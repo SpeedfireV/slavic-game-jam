@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=4 format=3 uid="uid://b8ssh76lf01b"]
+[gd_resource type="Resource" script_class="Flower" load_steps=5 format=3 uid="uid://b8ssh76lf01b"]
 
 [ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="1_i52bh"]
+[ext_resource type="Texture2D" uid="uid://cfr3ixstc45aq" path="res://assets/flowers/field_poppy.png" id="1_iiwrw"]
 [ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_yty1l"]
 
 [sub_resource type="Resource" id="Resource_iiwrw"]
@@ -14,7 +15,7 @@ metadata/_custom_type_script = "uid://0t5ugduq8561"
 
 [resource]
 script = ExtResource("1_yty1l")
-energy = 0
-collectable_times = 0
+flower_name = "Field Poppy"
+flower_texture = ExtResource("1_iiwrw")
 possible_resources = SubResource("Resource_iiwrw")
 metadata/_custom_type_script = "uid://c8gdaunyatd4t"

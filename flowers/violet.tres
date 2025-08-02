@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=2 format=3 uid="uid://b54g8wdc8u58p"]
+[gd_resource type="Resource" script_class="Flower" load_steps=3 format=3 uid="uid://b54g8wdc8u58p"]
 
 [ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_3lcsk"]
+[ext_resource type="Texture2D" uid="uid://313hvlqi8me4" path="res://assets/flowers/tulip.png" id="1_go847"]
 
 [resource]
 script = ExtResource("1_3lcsk")
+flower_name = "Violet"
+flower_texture = ExtResource("1_go847")
 metadata/_custom_type_script = "uid://c8gdaunyatd4t"
