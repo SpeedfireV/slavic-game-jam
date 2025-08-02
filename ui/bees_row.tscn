@@ -1,19 +1,39 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx655hkypa2so"]
 
+[ext_resource type="StyleBox" uid="uid://fue2v0rxu66g" path="res://ui/theme_data/panel_container/panel_container.tres" id="1_4py7u"]
 [ext_resource type="Script" uid="uid://dudevui6rhtyt" path="res://ui/bees_row.gd" id="1_vbksi"]
-[ext_resource type="PackedScene" uid="uid://0lhylvp05r6e" path="res://bee_row_element.tscn" id="2_4bmyf"]
 
-[node name="BeesRow" type="HBoxContainer"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -24.0
+[node name="MainCol" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = 48.0
 grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-theme_override_constants/separation = 36
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
 script = ExtResource("1_vbksi")
 
-[node name="BeeRowElement" parent="." instance=ExtResource("2_4bmyf")]
+[node name="BeeName" type="LineEdit" parent="."]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = ExtResource("1_4py7u")
+theme_override_styles/normal = ExtResource("1_4py7u")
+text = "ZBYSZEK"
+alignment = 1
+expand_to_text_length = true
+
+[node name="BeesRow" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 36

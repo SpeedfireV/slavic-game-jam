@@ -8,6 +8,18 @@ enum BeeType{
 	QUEEN
 }
 
+const BEE_NAMES = [
+	"Zbyszek",
+	"Ania",
+	"Krzysztof",
+	"Magda",
+	"Janek",
+	"Basia",
+	"Piotr",
+	"Kasia",
+	"Mahmud",
+]
+
 @export var total_number_of_moves: int = 15
 var moves_left: int
 var health: int = 100
@@ -16,7 +28,7 @@ var coords: Vector2i:
 		coords = value
 		global_position = Vector2(value) * Map.grid_step
 
-var bee_name: String = "Zbyszek"
+var bee_name: String = BEE_NAMES.pick_random()
 var type := BeeType.NORMAL
 var equiped_resources: CollectableResources = CollectableResources.new()
 

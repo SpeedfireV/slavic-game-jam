@@ -69,6 +69,7 @@ var hud: Hud
 
 signal next_turn_sig(current_season: Season)
 signal hexagon_selected(hexagon: MapHexagon)
+signal bee_selected(bee: Bee)
 
 var current_season: Season = Season.Spring
 
