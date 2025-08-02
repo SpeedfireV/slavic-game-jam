@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=2 format=3 uid="uid://c4ckjv4lohhhk"]
+[gd_resource type="Resource" script_class="Flower" load_steps=3 format=3 uid="uid://c4ckjv4lohhhk"]
 
+[ext_resource type="Texture2D" uid="uid://dnwgn7b8yracu" path="res://assets/flowers/lavender.png" id="1_cxivd"]
 [ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_mg0f6"]
 
 [resource]
 script = ExtResource("1_mg0f6")
+flower_name = "Lavender"
+flower_texture = ExtResource("1_cxivd")
 metadata/_custom_type_script = "uid://c8gdaunyatd4t"

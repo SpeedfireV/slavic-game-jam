@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=4 format=3 uid="uid://bv1452qfca6i8"]
+[gd_resource type="Resource" script_class="Flower" load_steps=5 format=3 uid="uid://bv1452qfca6i8"]
 
 [ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="1_68lp4"]
 [ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_dkdwr"]
+[ext_resource type="Texture2D" uid="uid://bb1lp3slrikfi" path="res://assets/flowers/dandelion.png" id="1_loyc2"]
 
 [sub_resource type="Resource" id="Resource_loyc2"]
 script = ExtResource("1_68lp4")
@@ -14,7 +15,7 @@ metadata/_custom_type_script = "uid://0t5ugduq8561"
 
 [resource]
 script = ExtResource("1_dkdwr")
-energy = 0
-collectable_times = 0
+flower_name = "Dandelion"
+flower_texture = ExtResource("1_loyc2")
 possible_resources = SubResource("Resource_loyc2")
 metadata/_custom_type_script = "uid://c8gdaunyatd4t"

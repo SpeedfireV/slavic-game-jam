@@ -17,6 +17,8 @@ enum HexagonType {
 	Grass
 }
 
+var flower_resource: Flower
+
 var possible_random_hexagon_types: Array[HexagonType] = [
 	HexagonType.Empty,
 	HexagonType.Flower,
@@ -82,6 +84,7 @@ class Neighbours:
 @onready var interaction_area: Area2D = %InteractionArea
 @onready var flower_particles: CPUParticles2D = %FlowerParticles
 
+
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
@@ -122,7 +125,8 @@ func _ready():
 		hexagon_resource.texture = OBSTACLES[randi() % OBSTACLES.size()]
 		hexagon_resource.scale = Vector2(2, 2)
 	if hexagon_type == HexagonType.Flower:
-		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
+		flower_resource = Flowers.FLOWER_TYPES.pick_random()
+		hexagon_resource.texture = flower_resource.flower_texture
 		hexagon_resource.scale = Vector2(1.7, 1.7)
 		flower_particles.emitting = true
 	if hexagon_type == HexagonType.Beehive:
