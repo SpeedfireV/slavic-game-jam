@@ -17,6 +17,13 @@ enum HexagonType {
 	Grass
 }
 
+var possible_random_hexagon_types: Array[HexagonType] = [
+	HexagonType.Empty,
+	HexagonType.Flower,
+	HexagonType.Blocade,
+	HexagonType.Grass
+]
+
 class Neighbours:
 	var hexagons: Dictionary[HexagonOrientation, MapHexagon] = {
 		HexagonOrientation.Right: null,
@@ -54,7 +61,7 @@ class Neighbours:
 			not_filled.append(HexagonOrientation.BottomRight)
 		return not_filled
 
-	func set_hexagon(hexagon: MapHexagon, orientation: HexagonOrientation):
+	func set_neighbouring_hexagon(hexagon: MapHexagon, orientation: HexagonOrientation):
 		match orientation:
 			HexagonOrientation.Left:
 				left_hexagon = hexagon
@@ -78,7 +85,7 @@ class Neighbours:
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
-var selected: bool = false
+var selected: bool = false 
 
 var mouse_on_top: bool = false:
 	set(new_value):
@@ -100,7 +107,10 @@ const DEFAULT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/default_hex
 const ALERT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/alert_hex_border.png")
 
 func _ready():
-	hexagon_type = HexagonType.values().pick_random()
+	if coords == Vector2i.ZERO:
+		hexagon_type = HexagonType.Beehive
+	else:
+		hexagon_type = possible_random_hexagon_types.pick_random()
 	if hexagon_type == HexagonType.Blocade:
 		hexagon_resource.texture = OBSTACLES[randi() % OBSTACLES.size()]
 		hexagon_resource.scale = Vector2(2, 2)
