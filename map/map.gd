@@ -101,3 +101,10 @@ func _check_for_neighbors(hex: MapHexagon, pos: Vector2i):
 			var neighbor_hex = placed_hexagons[neighbor_pos]
 			hex.neighbours.set_neighbouring_hexagon(neighbor_hex, orientation)
 			neighbor_hex.neighbours.set_neighbouring_hexagon(hex, _get_opposite_orientation(orientation))
+
+static func move_bee(bee: Bee, target_coords: Vector2i):
+	placed_hexagons[bee.coords].unit_on_hex = null
+	GameManager.selected_hexagon = Map.placed_hexagons.get(target_coords)
+	var target_hex = placed_hexagons[target_coords]
+	bee.coords = target_coords
+	target_hex.unit_on_hex = bee

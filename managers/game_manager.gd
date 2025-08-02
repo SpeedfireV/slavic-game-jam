@@ -56,6 +56,7 @@ var selected_hexagon: MapHexagon = null:
 		else:
 			GameManager.hud.hex_description.visible = false
 		selected_hexagon = value
+		selected_hexagon.selection_effect()
 		hexagon_selected.emit(value)
 var hud: Hud
 

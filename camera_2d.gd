@@ -38,7 +38,6 @@ func move_camera_wsad(delta):
 func lock_camera_movement():
 	if Input.is_action_just_pressed("camera_mouse_move"):
 		lock_camera_move=!lock_camera_move
-		print("CAMERA LOCKED:"+ str(lock_camera_move))
 		
 
 func handle_edge_pan(delta: float):
