@@ -101,7 +101,10 @@ var mouse_on_top: bool = false:
 
 
 const OBSTACLES: Array[Texture2D] = [
-	preload("res://assets/hexagons/obstacles/big_stone.png")
+	preload("res://assets/hexagons/obstacles/big_stone.png"),
+	preload("res://assets/hexagons/obstacles/scary_bush.png"),
+	preload("res://assets/hexagons/obstacles/lake.png"),
+	preload("res://assets/hexagons/obstacles/trees.png")
 ]
 
 const DEFAULT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/default_hex_border.png")
