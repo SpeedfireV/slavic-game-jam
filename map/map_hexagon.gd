@@ -86,6 +86,7 @@ var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
 var hexagon_type: HexagonType = HexagonType.Empty
 var selected: bool = false 
+var unit_on_hex: Unit
 
 var mouse_on_top: bool = false:
 	set(new_value):
@@ -109,6 +110,7 @@ const ALERT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/alert_hex_bor
 func _ready():
 	if coords == Vector2i.ZERO:
 		hexagon_type = HexagonType.Beehive
+		GameManager.add_new_unit(Bees.NORMAL_BEE_SCENE.instantiate())
 	else:
 		hexagon_type = possible_random_hexagon_types.pick_random()
 	if hexagon_type == HexagonType.Blocade:
@@ -133,9 +135,9 @@ func _input(event):
 func _process(delta):
 	if GameManager.selected_hexagon == self:
 		pass # TODO: Implement VFX on selection
-
 func _on_mouse_entered():
 	mouse_on_top = true
+	GameManager.mouse_on_hex = self
 
 func _on_hexagon_selected(hexagon: MapHexagon):
 	if hexagon != self and selected:
@@ -150,6 +152,8 @@ func _on_hexagon_clicked():
 	GameManager.selected_hexagon = self
 	var tween: Tween = create_tween()
 	selected = true
+	if unit_on_hex is Bee:
+		GameManager.selected_bee = unit_on_hex
 	tween.tween_property(hexagon_border, "modulate", Color(0xff8100ff), 0.1)
 	
 

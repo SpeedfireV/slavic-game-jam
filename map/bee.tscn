@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch613464h7lv"]
+[gd_scene load_steps=3 format=3 uid="uid://cbfts38w4rmmm"]
 
-[ext_resource type="Script" uid="uid://dmdr8d6knjy67" path="res://node_2d.gd" id="1_86q7x"]
+[ext_resource type="Script" uid="uid://dloi02o7ivxqv" path="res://bee.gd" id="1_u26ct"]
 [ext_resource type="Texture2D" uid="uid://c51ukjx0bplyy" path="res://assets/hexagons/bees/normal_bee.png" id="2_u26ct"]
 
 [node name="Bee" type="Node2D"]
-script = ExtResource("1_86q7x")
+script = ExtResource("1_u26ct")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_u26ct")
