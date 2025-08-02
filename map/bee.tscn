@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch613464h7lv"]
+
+[ext_resource type="Script" uid="uid://dmdr8d6knjy67" path="res://node_2d.gd" id="1_86q7x"]
+[ext_resource type="Texture2D" uid="uid://c51ukjx0bplyy" path="res://assets/hexagons/bees/normal_bee.png" id="2_u26ct"]
+
+[node name="Bee" type="Node2D"]
+script = ExtResource("1_86q7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u26ct")
