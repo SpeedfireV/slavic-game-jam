@@ -84,15 +84,15 @@ func _generate_map():
 		current_rotation = HexagonOrientation.BottomLeft
 		
 
-func _add_hex(pos: Vector2i):
+func _add_hex(coords: Vector2i):
 	var hex: MapHexagon = map_hexagon_scene.instantiate()
-	placed_hexagons[pos] = hex
-	_check_for_neighbors(hex, pos)
-	hex.position = Vector2(pos) * grid_step
-	hex.coords = Vector2(pos) * grid_step
+	placed_hexagons[coords] = hex
+	_check_for_neighbors(hex, coords)
+	hex.position = Vector2(coords) * grid_step
+	hex.coords = coords
 	add_child(hex)
 
-	placed_hexagons[pos] = hex
+	placed_hexagons[coords] = hex
 
 func _check_for_neighbors(hex: MapHexagon, pos: Vector2i):
 	for orientation in HexagonOrientation.values():
