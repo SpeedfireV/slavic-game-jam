@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://nu52ulpvu4k2"]
+[gd_scene load_steps=4 format=3 uid="uid://nu52ulpvu4k2"]
 
+[ext_resource type="Theme" uid="uid://dp38infowk4e3" path="res://ui/custom_theme.tres" id="1_binty"]
 [ext_resource type="Script" uid="uid://od4qxcaki64t" path="res://ui/hex_description/hex_description.gd" id="1_ltfpm"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_rbyyf"]
@@ -12,6 +13,7 @@ offset_left = 24.0
 offset_right = 201.0
 offset_bottom = 131.0
 size_flags_vertical = 8
+theme = ExtResource("1_binty")
 script = ExtResource("1_ltfpm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

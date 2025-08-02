@@ -3,6 +3,9 @@ class_name Navigator extends Node2D
 @onready var navigation_line: Line2D = %NavigationLine
 @onready var navigation_cost_label: Label = %NavigationCost
 
+var reachable: bool = false
+var move_cost: int = 0
+
 func _ready():
 	GameManager.navigator = self
 
@@ -25,12 +28,13 @@ func show_navigation():
 			navigation_line.points = []
 			navigation_cost_label.text = "🚫Unreachable🚫"
 			navigation_cost_label.global_position = GameManager.mouse_on_hex.global_position + Vector2(-navigation_cost_label.size.x / 2, -50)
-
-			return  # 🚫 Don't even try pathfinding
+			reachable = false
+			return # 🚫 Don't even try pathfinding
 
 		var path = find_path(start, goal)
 		if path.is_empty():
 			navigation_cost_label.text = "No path"
+			reachable = false
 			return
 
 		var global_points = path.map(func(coord: Vector2i):
@@ -38,8 +42,10 @@ func show_navigation():
 		)
 
 		navigation_line.points = global_points
+		move_cost = path.size() - 1
 		navigation_cost_label.text = str(path.size() - 1)
 		navigation_cost_label.global_position = GameManager.mouse_on_hex.global_position + Vector2(-navigation_cost_label.size.x / 2, -50)
+		reachable = true
 
 func find_path(start: Vector2i, goal: Vector2i) -> Array[Vector2i]:
 	var open_set = [start]
@@ -92,3 +98,12 @@ func reconstruct_path(came_from: Dictionary, current: Vector2i) -> Array[Vector2
 		current = came_from[current]
 		total_path.insert(0, current)
 	return total_path
+
+static func move_bee(bee: Bee, target_coords: Vector2i):
+	if GameManager.navigator.reachable and bee.moves_left >= GameManager.navigator.move_cost:
+		bee.moves_left -= GameManager.navigator.move_cost
+		Map.placed_hexagons[bee.coords].unit_on_hex = null
+		var target_hex = Map.placed_hexagons[target_coords]
+		bee.coords = target_coords
+		target_hex.unit_on_hex = bee
+		GameManager.selected_hexagon = Map.placed_hexagons.get(target_coords)

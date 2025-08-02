@@ -19,7 +19,7 @@ func get_season_name(season: Season) -> String:
 		Season.Winter:
 			return "Winter"
 		_:
-			print("Error: Invalid season encountered.")
+			push_error("Error: Invalid season encountered.")
 			return "Unknown Season"
 
 func _nextSeason() -> Season:
@@ -33,7 +33,7 @@ func _nextSeason() -> Season:
 		Season.Winter:
 			return Season.Spring
 		_:
-			print("Error: Invalid season encountered.")
+			push_error("Error: Invalid season encountered.")
 			return Season.Spring
 
 
@@ -44,7 +44,6 @@ var mouse_on_hex: MapHexagon:
 	set(value):
 		mouse_on_hex = value
 		navigator.show_navigation()
-		print("Mouse on hexagon: ", value, selected_hexagon, mouse_on_hex)
 var selected_bee: Bee
 var bees_node: BeesNode
 

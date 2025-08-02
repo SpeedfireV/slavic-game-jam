@@ -8,7 +8,8 @@ enum BeeType{
 	QUEEN
 }
 
-var moves: int = 15
+@export var total_number_of_moves: int = 15
+var moves_left: int
 var health: int = 100
 var coords: Vector2i:
 	set(value):
@@ -19,7 +20,10 @@ var bee_name: String = "Zbyszek"
 var type := BeeType.NORMAL
 var equiped_resources: CollectableResources = CollectableResources.new()
 
+func _ready():
+	moves_left = total_number_of_moves
+
 func _input(event):
 	if GameManager.selected_bee == self:
 		if Input.is_action_just_pressed("move"):
-			Map.move_bee(self, GameManager.mouse_on_hex.coords)
+			GameManager.navigator.move_bee(self, GameManager.mouse_on_hex.coords)
