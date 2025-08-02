@@ -45,6 +45,15 @@ grow_vertical = 0
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="NextTurnButton" parent="MarginContainer" instance=ExtResource("3_546lt")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="CurrentSeasonLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "WINTER"
+
+[node name="NextTurnButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("3_546lt")]
 unique_name_in_owner = true
 layout_mode = 2

@@ -8,7 +8,21 @@ enum Season {
 	Winter,
 }
 
-func _nextSeason():
+func get_season_name(season: Season) -> String:
+	match season:
+		Season.Spring:
+			return "Spring"
+		Season.Summer:
+			return "Summer"
+		Season.Autumn:
+			return "Autumn"
+		Season.Winter:
+			return "Winter"
+		_:
+			print("Error: Invalid season encountered.")
+			return "Unknown Season"
+
+func _nextSeason() -> Season:
 	match current_season:
 		Season.Spring:
 			return Season.Summer
@@ -18,11 +32,14 @@ func _nextSeason():
 			return Season.Winter
 		Season.Winter:
 			return Season.Spring
+		_:
+			print("Error: Invalid season encountered.")
+			return Season.Spring
+
 
 var collectable_resources := CollectableResources.new()
 
 var navigator: Navigator
-var selected_hex: MapHexagon
 var mouse_on_hex: MapHexagon:
 	set(value):
 		mouse_on_hex = value
@@ -32,6 +49,8 @@ var bees_node: BeesNode
 
 var selected_hexagon: MapHexagon = null:
 	set(value):
+		selected_bee = null
+		navigator.clear_navigation()
 		if value != null:
 			GameManager.hud.show_hex_description(value)
 		else:

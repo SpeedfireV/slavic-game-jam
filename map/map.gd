@@ -21,7 +21,7 @@ static var grid_step: Vector2 = Vector2(60, 35)  # Assuming hexagons are 64x64 p
 
 
 # Pixel-based direction offsets (pointy-topped hex grid)
-var orientation_to_pos: Dictionary[HexagonOrientation, Vector2i] = {
+static var orientation_to_pos: Dictionary[HexagonOrientation, Vector2i] = {
 	HexagonOrientation.Right: Vector2i(2, 0),
 	HexagonOrientation.Left: Vector2i(-2, 0),
 	HexagonOrientation.TopRight: Vector2i(1, -3),
