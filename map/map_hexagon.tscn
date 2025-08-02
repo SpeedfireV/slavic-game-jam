@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqvhcagx06gku"]
+[gd_scene load_steps=5 format=3 uid="uid://dqvhcagx06gku"]
 
 [ext_resource type="Script" uid="uid://buhsxcu083a3s" path="res://map/map_hexagon.gd" id="1_bi2y5"]
 [ext_resource type="Texture2D" uid="uid://b3a8fjeloratq" path="res://assets/hexagons/empty/grass_filled.png" id="2_w3l8w"]
 [ext_resource type="Texture2D" uid="uid://bhiighpbylyi0" path="res://assets/hexagons/default_hex_border.png" id="3_jrl58"]
+
+[sub_resource type="Gradient" id="Gradient_v2c1d"]
+colors = PackedColorArray(1, 0.929412, 0.117647, 1, 1, 1, 0.458824, 0)
 
 [node name="MapHexagon" type="Node2D"]
 script = ExtResource("1_bi2y5")
@@ -23,3 +26,19 @@ unique_name_in_owner = true
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="InteractionArea"]
 polygon = PackedVector2Array(0, -70, 60, -36, 60, 36, 0, 70, -60, 36, -60, -36)
+
+[node name="FlowerParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 54.01
+gravity = Vector2(0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = -5.0
+angular_velocity_max = 5.0
+orbit_velocity_max = 0.15
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_v2c1d")
