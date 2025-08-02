@@ -12,8 +12,6 @@ script = ExtResource("1_7ihmi")
 [node name="RainEffect" parent="." instance=ExtResource("2_en2x2")]
 position = Vector2(248, 10)
 lifetime = 3.0
-linear_accel_min = 0.0
-linear_accel_max = 0.0
 scale_amount_min = 2.0
 scale_amount_max = 8.0
 
