@@ -5,4 +5,4 @@ class_name HexDescription extends PanelContainer
 
 func update_info(hexagon: MapHexagon):
 	resource_name_label.text = hexagon.get_hex_resource_name()
-	coordinates_label.text = "(" + str(hexagon.coords.x / 60) + "," + str (hexagon.coords.y / 105) + ")"
+	coordinates_label.text = "(" + str(hexagon.coords.x) + "," + str (hexagon.coords.y / 3) + ")"
