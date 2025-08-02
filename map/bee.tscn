@@ -1,7 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbfts38w4rmmm"]
+[gd_scene load_steps=7 format=3 uid="uid://cbfts38w4rmmm"]
 
 [ext_resource type="Script" uid="uid://dloi02o7ivxqv" path="res://bee.gd" id="1_u26ct"]
 [ext_resource type="Texture2D" uid="uid://c51ukjx0bplyy" path="res://assets/hexagons/bees/normal_bee.png" id="2_u26ct"]
+[ext_resource type="Texture2D" uid="uid://cudrycghfv8b1" path="res://assets/hexagons/bees/normal_bee2.png" id="3_opckg"]
+
+[sub_resource type="Animation" id="Animation_u26ct"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3.5), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1333, 0.26, 0.3933, 0.52, 0.6533, 0.8, 0.9333, 1.06, 1.1933, 1.32, 1.4533, 1.58, 1.69, 1.8, 1.92),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg"), ExtResource("2_u26ct"), ExtResource("3_opckg")]
+}
+
+[sub_resource type="Animation" id="Animation_opckg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_u26ct")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7dja"]
+_data = {
+&"RESET": SubResource("Animation_opckg"),
+&"idle": SubResource("Animation_u26ct")
+}
 
 [node name="Bee" type="Node2D"]
 script = ExtResource("1_u26ct")
@@ -9,3 +72,10 @@ script = ExtResource("1_u26ct")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_u26ct")
+offset = Vector2(0, -3.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s7dja")
+}
+autoplay = "idle"
