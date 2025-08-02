@@ -64,10 +64,10 @@ func handle_edge_pan(delta: float):
 func handle_zoom(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				zoom -= Vector2(zoom_speed, zoom_speed)
 				zoom = zoom.clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))
-			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				zoom += Vector2(zoom_speed, zoom_speed)
 				zoom = zoom.clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))
 
