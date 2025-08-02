@@ -105,5 +105,7 @@ static func move_bee(bee: Bee, target_coords: Vector2i):
 		Map.placed_hexagons[bee.coords].units_on_hex.erase(bee)
 		var target_hex = Map.placed_hexagons[target_coords]
 		bee.coords = target_coords
-		target_hex.units_on_hex = bee
+		target_hex.units_on_hex.append(bee)
+		target_hex.selection_effect()
+		GameManager.selected_bee = bee
 		GameManager.selected_hexagon = Map.placed_hexagons.get(target_coords)

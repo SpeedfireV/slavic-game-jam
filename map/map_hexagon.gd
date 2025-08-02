@@ -137,7 +137,7 @@ func _ready():
 	interaction_area.mouse_exited.connect(_on_mouse_exited)
 	GameManager.hexagon_selected.connect(_on_hexagon_selected)
 
-func _input(event):
+func _unhandled_input(event):
 	if mouse_on_top and Input.is_action_just_pressed("select"):
 		_on_hexagon_clicked()
 

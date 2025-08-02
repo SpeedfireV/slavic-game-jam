@@ -50,19 +50,20 @@ var bees_row: BeesRow
 
 var selected_hexagon: MapHexagon = null:
 	set(value):
-		selected_bee = null
 		navigator.clear_navigation()
 		var bees_on_hex: Array[Bee] 
 		for unit in value.units_on_hex:
 			if unit is Bee:
 				bees_on_hex.append(unit)
 		bees_row.set_bees(bees_on_hex)
-		bees_row.set_bees(bees_on_hex)
 		if value != null:
 			GameManager.hud.show_hex_description(value)
 		else:
 			GameManager.hud.hex_description.visible = false
 		selected_hexagon = value
+		if selected_hexagon != null:
+			if not selected_hexagon.units_on_hex.has(selected_bee):
+				selected_bee = null
 		hexagon_selected.emit(value)
 var hud: Hud
 
