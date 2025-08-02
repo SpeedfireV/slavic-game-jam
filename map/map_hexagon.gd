@@ -93,11 +93,7 @@ var mouse_on_top: bool = false:
 
 
 const OBSTACLES: Array[Texture2D] = [
-	preload("res://assets/hexagons/obstacles/obstacle_1.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_2.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_3.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_4.png"),
-	preload("res://assets/hexagons/obstacles/obstacle_5.png"),
+	preload("res://assets/hexagons/obstacles/big_stone.png")
 ]
 
 const DEFAULT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/default_hex_border.png")
@@ -106,7 +102,8 @@ const ALERT_HEX_BORDER: Texture2D = preload("res://assets/hexagons/alert_hex_bor
 func _ready():
 	hexagon_type = HexagonType.values().pick_random()
 	if hexagon_type == HexagonType.Blocade:
-		hexagon_sprite.texture = OBSTACLES[randi() % OBSTACLES.size()]
+		hexagon_resource.texture = OBSTACLES[randi() % OBSTACLES.size()]
+		hexagon_resource.scale = Vector2(2, 2)
 	if hexagon_type == HexagonType.Flower:
 		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
 		hexagon_resource.scale = Vector2(1.7, 1.7)
