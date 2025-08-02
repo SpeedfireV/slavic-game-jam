@@ -73,6 +73,7 @@ class Neighbours:
 @onready var hexagon_border: Sprite2D = %HexBorder
 @onready var hexagon_resource: Sprite2D = %HexResource
 @onready var interaction_area: Area2D = %InteractionArea
+@onready var flower_particles: CPUParticles2D = %FlowerParticles
 
 var neighbours: Neighbours = Neighbours.new()
 var coords: Vector2i = Vector2i.ZERO
@@ -109,6 +110,7 @@ func _ready():
 	if hexagon_type == HexagonType.Flower:
 		hexagon_resource.texture = Flowers.FLOWER_TEXTURES.pick_random()
 		hexagon_resource.scale = Vector2(1.7, 1.7)
+		flower_particles.emitting = true
 	if hexagon_type == HexagonType.Beehive:
 		hexagon_resource.texture = preload("res://assets/hexagons/beehive/beehive.png")
 		
