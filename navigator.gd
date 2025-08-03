@@ -109,3 +109,5 @@ static func move_bee(bee: Bee, target_coords: Vector2i):
 		target_hex.selection_effect()
 		GameManager.selected_bee = bee
 		GameManager.selected_hexagon = Map.placed_hexagons.get(target_coords)
+		if GameManager.selected_hexagon.hexagon_type == MapHexagon.HexagonType.Beehive:
+			bee.give_resources_to_hive()

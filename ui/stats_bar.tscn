@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jrpypt07m3co"]
+[gd_scene load_steps=8 format=3 uid="uid://jrpypt07m3co"]
 
 [ext_resource type="Script" uid="uid://1ewxtmotw010" path="res://ui/stats_bar.gd" id="1_2qrqc"]
 [ext_resource type="Theme" uid="uid://dp38infowk4e3" path="res://ui/custom_theme.tres" id="2_a58cu"]
@@ -7,76 +7,87 @@
 [ext_resource type="Texture2D" uid="uid://bdtdhgm8ai0vb" path="res://assets/resources/honey.png" id="4_tv1aq"]
 [ext_resource type="Texture2D" uid="uid://b3jti0axoygk3" path="res://assets/resources/beepollen.png" id="6_0qvp0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsad2"]
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.48373, 0.238383, 0.0257465, 1)
+
 [node name="StatsBar" type="MarginContainer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 62.0
-grow_horizontal = 2
+offset_right = 1298.0
+offset_bottom = 128.0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 script = ExtResource("1_2qrqc")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_gsad2")
 
-[node name="TempResourcesUI" type="HBoxContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TempResourcesUI" type="HBoxContainer" parent="PanelContainer2/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/PanelContainer/TempResourcesUI"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("4_tv1aq")
 
-[node name="Honeycomb" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer"]
+[node name="Honeycomb" type="Label" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_a58cu")
 text = "HONEYCOMB 32"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/PanelContainer/TempResourcesUI"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer2"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("4_gsad2")
 
-[node name="Beeswax" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer2"]
+[node name="Beeswax" type="Label" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "BEESWAX 15"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer2/PanelContainer/TempResourcesUI"]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer3"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("3_a58cu")
 expand_mode = 1
 
-[node name="Nectar" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer3"]
+[node name="Nectar" type="Label" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "NECTAR"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/TempResourcesUI"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer2/PanelContainer/TempResourcesUI"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TempResourcesUI/HBoxContainer4"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer4"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("6_0qvp0")
 expand_mode = 1
 
-[node name="Beepollen" type="Label" parent="PanelContainer/TempResourcesUI/HBoxContainer4"]
+[node name="Beepollen" type="Label" parent="PanelContainer2/PanelContainer/TempResourcesUI/HBoxContainer4"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "BEEPOLLEN"

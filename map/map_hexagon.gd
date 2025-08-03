@@ -126,6 +126,7 @@ func _ready():
 		hexagon_resource.scale = Vector2(2, 2)
 	if hexagon_type == HexagonType.Flower:
 		flower_resource = Flowers.FLOWER_TYPES.pick_random()
+		print(flower_resource.flower_name)
 		hexagon_resource.texture = flower_resource.flower_texture
 		hexagon_resource.scale = Vector2(1.7, 1.7)
 		flower_particles.emitting = true
@@ -182,3 +183,9 @@ func get_hex_resource_name() -> String:
 			return "Grass"
 	return "Unknown"
 	
+
+func collect():
+	hexagon_type = HexagonType.Empty
+	flower_resource = null
+	hexagon_resource.texture = null
+	GameManager.hud.hex_description.update_info(GameManager.selected_hexagon)

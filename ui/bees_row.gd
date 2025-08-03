@@ -4,6 +4,7 @@ const BEE_ROW_ELEMENT_SCENE: PackedScene = preload("res://bee_row_element.tscn")
 
 @onready var bee_name: LineEdit = %BeeName
 @onready var bees_row: HBoxContainer = %BeesRow
+@onready var energy_left_label: Label = %EnergyLeftName
 
 func _ready():
 	GameManager.bees_row = self
@@ -26,6 +27,12 @@ func _process(delta):
 			bee_name.visible = true
 		else:
 			bee_name.visible = false
+	if GameManager.selected_bee:
+		energy_left_label.visible = true
+		energy_left_label.text = "Energy Left: " + str(GameManager.selected_bee.moves_left)
+	else:
+		energy_left_label.visible = false
+	
 
 
 func _on_bee_selected(bee: Bee):

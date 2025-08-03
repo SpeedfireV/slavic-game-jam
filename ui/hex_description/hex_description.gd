@@ -8,10 +8,13 @@ class_name HexDescription extends PanelContainer
 @onready var beepollen_label: Label = %BeepollenLabel
 @onready var beepollen_icon: TextureRect = %BeepollenIcon
 
+@onready var collect_button: Button = %CollectButton 
+
 var show_info_resources :bool = false
 
 func _ready() -> void:
 	GameManager.hexagon_selected.connect(update_info)
+	collect_button.pressed.connect(_on_collect_button_pressed)
 
 func update_info(hexagon: MapHexagon):
 	if hexagon.hexagon_type == MapHexagon.HexagonType.Flower:
@@ -22,7 +25,22 @@ func update_info(hexagon: MapHexagon):
 		resource_name_label.text = hexagon.get_hex_resource_name()
 	
 	coordinates_label.text = "(" + str(hexagon.coords.x) + "," + str (hexagon.coords.y / 3) + ")"
-	
+	if not hexagon.units_on_hex.has(GameManager.selected_bee) or GameManager.selected_bee == null or hexagon.hexagon_type != MapHexagon.HexagonType.Flower:
+		collect_button.visible = false
+	else:
+		collect_button.visible = true
+		if hexagon.flower_resource.possible_resources.energy > GameManager.selected_bee.moves_left:
+			collect_button.disabled = true
+			collect_button.text = "NOT ENOUGH MOVES"
+		else:
+			collect_button.disabled = false
+			print(hexagon)
+			print(hexagon.flower_resource)
+			print(hexagon.flower_resource.resource_name, 
+				hexagon.flower_resource.flower_name)
+			print(hexagon.flower_resource.possible_resources)
+			collect_button.text = "[" + str(hexagon.flower_resource.possible_resources.energy) + " ENERGY]" + " COLLECT"
+
 
 func _process(delta: float) -> void:
 	if !show_info_resources:
@@ -38,3 +56,7 @@ func _process(delta: float) -> void:
 		beepollen_label.visible = true
 		beepollen_icon.visible = true
 		
+func _on_collect_button_pressed():
+	if GameManager.selected_bee.moves_left >= GameManager.selected_hexagon.flower_resource.possible_resources.energy:
+		GameManager.selected_bee.add_resources(GameManager.selected_hexagon.flower_resource.possible_resources)
+		GameManager.selected_hexagon.collect()

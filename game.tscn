@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3dy0se2lu5p2"]
+[gd_scene load_steps=11 format=3 uid="uid://c3dy0se2lu5p2"]
 
 [ext_resource type="PackedScene" uid="uid://cyp2an4w5fqos" path="res://map/map.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://b3sfbpftnlvrc" path="res://camera_2d.gd" id="2_e2o6t"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cndgtqret5cf3" path="res://cursor_lighter.gd" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://kumnmjotrcwj" path="res://navigator.tscn" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://c51rmoryfpk4i" path="res://bees_node.gd" id="6_ryrav"]
+[ext_resource type="Script" uid="uid://n8vvu8btspss" path="res://audio_stream_player.gd" id="7_eow3j"]
+[ext_resource type="AudioStream" uid="uid://okemk7my3rj6" path="res://assets/songs/BeepBox-Song (1).wav" id="7_j5wjh"]
 
 [sub_resource type="Gradient" id="Gradient_feb5d"]
 offsets = PackedFloat32Array(0.200456, 1)
@@ -38,3 +40,8 @@ texture = SubResource("GradientTexture2D_fc0e3")
 script = ExtResource("4_fc0e3")
 
 [node name="NavigationLine" parent="." instance=ExtResource("5_7jktm")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_j5wjh")
+autoplay = true
+script = ExtResource("7_eow3j")

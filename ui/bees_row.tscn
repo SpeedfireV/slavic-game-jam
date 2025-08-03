@@ -19,7 +19,11 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 32
 script = ExtResource("1_vbksi")
 
-[node name="BeeName" type="LineEdit" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="BeeName" type="LineEdit" parent="HBoxContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -31,6 +35,11 @@ theme_override_styles/normal = ExtResource("1_4py7u")
 text = "ZBYSZEK"
 alignment = 1
 expand_to_text_length = true
+
+[node name="EnergyLeftName" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="BeesRow" type="HBoxContainer" parent="."]
 unique_name_in_owner = true

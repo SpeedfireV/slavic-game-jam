@@ -21,7 +21,7 @@ var target_zoom: Vector2 = Vector2.ONE
 func _process(delta: float):
 	move_camera_wsad(delta)
 	lock_camera_movement()
-	if !lock_camera_move:
+	if lock_camera_move:
 		handle_edge_pan(delta)
 
 	global_position = lerp(global_position, target_position, 0.2)

@@ -1,6 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dp38infowk4e3"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dp38infowk4e3"]
 
-[ext_resource type="StyleBox" uid="uid://fue2v0rxu66g" path="res://ui/theme_data/panel_container/panel_container.tres" id="1_6ddt3"]
+[ext_resource type="Texture2D" uid="uid://vck4iam4va7i" path="res://assets/plank_zepsuty.png" id="1_6ddt3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikglv"]
+texture = ExtResource("1_6ddt3")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
 
 [resource]
 HeaderLarge/font_sizes/font_size = 32
@@ -8,4 +16,4 @@ HeaderMedium/font_sizes/font_size = 26
 HeaderSmall/font_sizes/font_size = 20
 Label/constants/outline_size = 8
 Label/font_sizes/font_size = 32
-PanelContainer/styles/panel = ExtResource("1_6ddt3")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ikglv")

@@ -44,7 +44,10 @@ var mouse_on_hex: MapHexagon:
 	set(value):
 		mouse_on_hex = value
 		navigator.show_navigation()
-var selected_bee: Bee
+var selected_bee: Bee:
+	set(value):
+		selected_bee = value
+		GameManager.hud.show_hex_description(selected_hexagon)
 var bees_node: BeesNode
 var bees_row: BeesRow
 

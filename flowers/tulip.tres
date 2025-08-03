@@ -1,10 +1,21 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=3 format=3 uid="uid://j62s5jhk145q"]
+[gd_resource type="Resource" script_class="Flower" load_steps=5 format=3 uid="uid://j62s5jhk145q"]
 
 [ext_resource type="Texture2D" uid="uid://313hvlqi8me4" path="res://assets/flowers/tulip.png" id="1_4i7pw"]
 [ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_eoxy3"]
+[ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="2_mgc6u"]
+
+[sub_resource type="Resource" id="Resource_mkb4f"]
+script = ExtResource("2_mgc6u")
+honeycomb = 0
+beeswax = 0
+nectar = 0
+beepollen = 0
+energy = 0
+metadata/_custom_type_script = "uid://0t5ugduq8561"
 
 [resource]
 script = ExtResource("1_eoxy3")
 flower_name = "Tulip"
 flower_texture = ExtResource("1_4i7pw")
+possible_resources = SubResource("Resource_mkb4f")
 metadata/_custom_type_script = "uid://c8gdaunyatd4t"
