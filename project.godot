@@ -17,12 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://managers/game_manager.gd"
+GameManager="*res://managers/GameManager.cs"
 
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+
+[dotnet]
+
+project/assembly_name="Slavic Game Jam"
 
 [gui]
 

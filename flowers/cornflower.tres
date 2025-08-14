@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=5 format=3 uid="uid://mbo6v5ffqoac"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://mbo6v5ffqoac"]
 
-[ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_44yfs"]
 [ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="1_iv7jx"]
 [ext_resource type="Texture2D" uid="uid://dh826il258adg" path="res://assets/flowers/cornflower.png" id="1_jtq0u"]
+[ext_resource type="Script" uid="uid://vjgy1o8ne31o" path="res://Flower.cs" id="2_iv7jx"]
 
 [sub_resource type="Resource" id="Resource_jtq0u"]
 script = ExtResource("1_iv7jx")
@@ -14,8 +14,7 @@ energy = 0
 metadata/_custom_type_script = "uid://0t5ugduq8561"
 
 [resource]
-script = ExtResource("1_44yfs")
+script = ExtResource("2_iv7jx")
 flower_name = "Cornflower"
 flower_texture = ExtResource("1_jtq0u")
 possible_resources = SubResource("Resource_jtq0u")
-metadata/_custom_type_script = "uid://c8gdaunyatd4t"

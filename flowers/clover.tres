@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Flower" load_steps=5 format=3 uid="uid://ba6ij74koljhj"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ba6ij74koljhj"]
 
 [ext_resource type="Texture2D" uid="uid://br2l8t2y5xwxe" path="res://assets/flowers/clover.png" id="1_hl2jr"]
 [ext_resource type="Script" uid="uid://0t5ugduq8561" path="res://collectable_resources.gd" id="1_r023t"]
-[ext_resource type="Script" uid="uid://c8gdaunyatd4t" path="res://flower.gd" id="1_xvdi3"]
+[ext_resource type="Script" uid="uid://vjgy1o8ne31o" path="res://Flower.cs" id="2_r023t"]
 
 [sub_resource type="Resource" id="Resource_hl2jr"]
 script = ExtResource("1_r023t")
-honeycomb = 0
+honeycomb = 15
 beeswax = 0
 nectar = 0
 beepollen = 0
@@ -14,8 +14,7 @@ energy = 0
 metadata/_custom_type_script = "uid://0t5ugduq8561"
 
 [resource]
-script = ExtResource("1_xvdi3")
+script = ExtResource("2_r023t")
 flower_name = "Clover"
 flower_texture = ExtResource("1_hl2jr")
 possible_resources = SubResource("Resource_hl2jr")
-metadata/_custom_type_script = "uid://c8gdaunyatd4t"

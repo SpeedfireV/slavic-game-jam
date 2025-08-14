@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://0lhylvp05r6e"]
 
 [ext_resource type="StyleBox" uid="uid://fue2v0rxu66g" path="res://ui/theme_data/panel_container/panel_container.tres" id="1_cb55b"]
-[ext_resource type="Script" uid="uid://b4vql836p54o3" path="res://bee_row_element.gd" id="2_21l1i"]
+[ext_resource type="Script" uid="uid://1eyk6qnbcqf0" path="res://BeeRowElement.cs" id="2_21l1i"]
 [ext_resource type="Texture2D" uid="uid://c51ukjx0bplyy" path="res://assets/hexagons/bees/normal_bee.png" id="2_nhabg"]
 
 [node name="BeeRowElement" type="PanelContainer"]

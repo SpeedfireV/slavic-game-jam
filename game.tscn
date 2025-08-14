@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://c3dy0se2lu5p2"]
 
 [ext_resource type="PackedScene" uid="uid://cyp2an4w5fqos" path="res://map/map.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://mysvrv8glyjv" path="res://BeesNode.cs" id="1_j5wjh"]
 [ext_resource type="Script" uid="uid://b3sfbpftnlvrc" path="res://camera_2d.gd" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://drt2hvcmae3s8" path="res://ui/hud.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://cndgtqret5cf3" path="res://cursor_lighter.gd" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://kumnmjotrcwj" path="res://navigator.tscn" id="5_7jktm"]
-[ext_resource type="Script" uid="uid://c51rmoryfpk4i" path="res://bees_node.gd" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://n8vvu8btspss" path="res://audio_stream_player.gd" id="7_eow3j"]
 [ext_resource type="AudioStream" uid="uid://okemk7my3rj6" path="res://assets/songs/BeepBox-Song (1).wav" id="7_j5wjh"]
 
@@ -26,14 +26,14 @@ metadata/_snap_enabled = true
 
 [node name="BeesNode" type="Node2D" parent="."]
 z_index = 5
-script = ExtResource("6_ryrav")
+script = ExtResource("1_j5wjh")
 
 [node name="Map" parent="." instance=ExtResource("1_80nbo")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_e2o6t")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_feb5d")]
+[node name="Hud" parent="." instance=ExtResource("3_feb5d")]
 
 [node name="CursorLighter" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_fc0e3")

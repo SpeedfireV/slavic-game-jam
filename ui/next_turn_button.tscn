@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7jl8yjv0b0i0"]
 
-[ext_resource type="Script" uid="uid://cnuef1hp2728x" path="res://ui/next_turn_button.gd" id="1_k0wlo"]
+[ext_resource type="Script" uid="uid://d25ns8ur1141f" path="res://ui/NextTurnButton.cs" id="1_k0wlo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0wlo"]
 bg_color = Color(0.887709, 0.477577, 1.15514e-06, 1)

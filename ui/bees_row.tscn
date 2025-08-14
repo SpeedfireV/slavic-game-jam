@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx655hkypa2so"]
 
 [ext_resource type="StyleBox" uid="uid://fue2v0rxu66g" path="res://ui/theme_data/panel_container/panel_container.tres" id="1_4py7u"]
-[ext_resource type="Script" uid="uid://dudevui6rhtyt" path="res://ui/bees_row.gd" id="1_vbksi"]
+[ext_resource type="Script" uid="uid://346qk8t2skap" path="res://ui/BeesRow.cs" id="1_vbksi"]
 
 [node name="MainCol" type="VBoxContainer"]
 anchors_preset = 8

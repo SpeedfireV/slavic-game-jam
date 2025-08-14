@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqvhcagx06gku"]
 
-[ext_resource type="Script" uid="uid://buhsxcu083a3s" path="res://map/map_hexagon.gd" id="1_bi2y5"]
+[ext_resource type="Script" uid="uid://b8l87rk52beco" path="res://map/MapHexagon.cs" id="1_v2c1d"]
 [ext_resource type="Texture2D" uid="uid://b3a8fjeloratq" path="res://assets/hexagons/empty/grass_filled.png" id="2_w3l8w"]
 [ext_resource type="Texture2D" uid="uid://bhiighpbylyi0" path="res://assets/hexagons/default_hex_border.png" id="3_jrl58"]
 
@@ -8,7 +8,7 @@
 colors = PackedColorArray(1, 0.929412, 0.117647, 1, 1, 1, 0.458824, 0)
 
 [node name="MapHexagon" type="Node2D"]
-script = ExtResource("1_bi2y5")
+script = ExtResource("1_v2c1d")
 
 [node name="HexSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
